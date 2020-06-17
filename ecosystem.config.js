@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "jin-pm",
       script: "./bin/http.js",
-      watch: false,
+      watch: true,
       env: {
         NODE_ENV: "development",
         watch: true,

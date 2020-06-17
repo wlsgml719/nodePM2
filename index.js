@@ -11,12 +11,23 @@ app.use(function (req, res, next) {
   next();
 });
 
+// ------ controller -------
 const getRoute = () => {
   const router = express.Router();
+  router.all("/*", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+  });
 };
 
-app.use("/v1", router);
+const getPath = (path, subpath) => {
+  fs.readdirSync(path + subpath, { withFileTypes: true }).forEach(function (
+    file
+  ) {});
+};
 
-// app.use("/v1", controllers.router);
+// ------ controller -------
+app.use("/v1", getRoute());
 
 export default app;
