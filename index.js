@@ -11,9 +11,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-// const getRoute = () => {
-//   const router = express.Router();
-// };
+const getRoute = () => {
+  const router = express.Router();
+};
+
+app.use("/v1", router);
 
 // app.use("/v1", controllers.router);
 
